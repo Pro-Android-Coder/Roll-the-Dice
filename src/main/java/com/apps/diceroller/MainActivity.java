@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Random;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 hideDice();
-                int r = (int) (Math.random()*(6 - 1 + 1)) + 1;
+                Random random = new Random();
+                int r = random.nextInt(6)
                 String s = String.valueOf(r);
                 textView.setText(s);
             }
